@@ -1,0 +1,10 @@
+{
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "tooltip": true,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "active-first": true
+  }
+}

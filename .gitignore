@@ -1,0 +1,3 @@
+# Ignore SSH and GPG directories
+.ssh/
+.gpg/

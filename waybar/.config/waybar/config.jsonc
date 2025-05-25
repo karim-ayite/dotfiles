@@ -1,56 +1,79 @@
 {
-    "layer": "top",
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["network","pulseaudio","cpu","memory","temperature","battery", "clock"],
-    "hyprland/window": {
-        "max-length": 50
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "temperature": {
-        "critical-threshold": 80,
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    }
+  //Make the bar as the top layer.
+  "layer": "top",
+  // Make waybar appear at the top of the screen. You can give "bottom/left/right" also as needed.
+  "position": "top",
+  //Define what items should appear in the left part of the waybar.
+  "modules-left": [
+    "custom/appmenu",
+    "wlr/taskbar"
+  ],
+  //Define the items to appear in the center part of the bar.
+  "modules-center": [
+    "hyprland/workspaces",
+    "clock"
+  ],
+  //Define items to appear in the right side of the bar.
+  "modules-right": [
+    "cpu",
+    "user",
+    "network"
+  ],
+  "hyprland/window": {
+    "max-length": 50,
+    "separate-outputs": true
+  },
+  "include": [
+    "~/.config/waybar/modules/appmenu.json",
+    "~/.config/waybar/modules/taskbar.json",
+    "~/.config/waybar/modules/workspaces.json",
+    "~/.config/waybar/modules/clock.json"
+  ]
+  /*"network": {
+      // "interface": "wlp2*", // (Optional) To force the use of this interface
+      "format-wifi": "{essid} ({signalStrength}%) ",
+      "format-ethernet": "{ipaddr}/{cidr} ",
+      "tooltip-format": "{ifname} via {gwaddr} ",
+      "format-linked": "{ifname} (No IP) ",
+      "format-disconnected": "Disconnected ⚠",
+      "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "pulseaudio": {
+      // "scroll-step": 1, // %, can be a float
+      "format": "{volume}% {icon} {format_source}",
+      "format-bluetooth": "{volume}% {icon} {format_source}",
+      "format-bluetooth-muted": " {icon} {format_source}",
+      "format-muted": " {format_source}",
+      "format-source": "{volume}% ",
+      "format-source-muted": "",
+      "format-icons": {
+          "headphone": "",
+          "hands-free": "",
+          "headset": "",
+          "phone": "",
+          "portable": "",
+          "car": "",
+          "default": ["", "", ""]
+      },
+      "on-click": "kmix"
+  },
+  "battery": {
+      "format": "{capacity}% {icon}",
+      "format-icons": ["", "", "", "", ""]
+  },
+  "clock": {
+      "format-alt": "{:%a, %d. %b  %H:%M}"
+  },
+  "cpu": {
+      "format": "{usage}% ",
+      "tooltip": false
+  },
+  "memory": {
+      "format": "{}% "
+  },
+  "temperature": {
+      "critical-threshold": 80,
+      "format": "{temperatureC}°C {icon}",
+      "format-icons": ["", "", ""]
+  }*/
 }
