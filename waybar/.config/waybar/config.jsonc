@@ -15,9 +15,12 @@
   ],
   //Define items to appear in the right side of the bar.
   "modules-right": [
-    "cpu",
-    "user",
-    "network"
+//    "cpu",
+    "hyprland/language",
+    "pulseaudio",
+    "bluetooth",
+    "network",
+    "battery"
   ],
   "hyprland/window": {
     "max-length": 50,
@@ -27,8 +30,19 @@
     "~/.config/waybar/modules/appmenu.json",
     "~/.config/waybar/modules/taskbar.json",
     "~/.config/waybar/modules/workspaces.json",
-    "~/.config/waybar/modules/clock.json"
-  ]
+    "~/.config/waybar/modules/clock.json",
+    "~/.config/waybar/modules/cpu.json",
+    "~/.config/waybar/modules/network.json",
+    "~/.config/waybar/modules/battery.json",
+    "~/.config/waybar/modules/bluetooth.json"
+  ],
+  "hyprland/language": {
+    "format": "Keymap: {}",
+    "format-en": "US",
+    "format-fr": "FR",
+    "keyboard-name": "at-translated-set-2-keyboard"
+  }
+
   /*"network": {
       // "interface": "wlp2*", // (Optional) To force the use of this interface
       "format-wifi": "{essid} ({signalStrength}%) ",
@@ -76,4 +90,5 @@
       "format": "{temperatureC}°C {icon}",
       "format-icons": ["", "", ""]
   }*/
+
 }
